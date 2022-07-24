@@ -1,0 +1,84 @@
+
+
+			body {
+				display: flex;
+				min-height: 100vh;
+				flex-direction: column;
+				background-color: #F7FBF9;
+			}
+			main {
+				flex : 1 0 auto;
+			}
+			table.striped > tbody > tr:nth-child(odd) {
+				background-color: #f1f8e9 !important;
+			}
+			
+			table.highlight>tbody>tr:hover {
+   				background-color: rgb(233,237,251) !important;
+			}
+			table.highlight>tbody>tr {
+    			color: black !important; 
+			}
+			table.striped> thead> tr {
+				background-color: #F4B9B8!important;
+			}
+			.btnEliminar{
+				background-color: #DB1F48  !important;
+			 }
+			 .btnUpdate{
+    			background-color: #5885AF !important;
+			
+			}
+			.btnCancelar{
+				background-color: #DB1F48  !important;
+			 }
+			 .btnIngresar{
+				background-color: #004369  !important;
+			 }
+			
+			.btn {
+                background-color: #9DA993 !important;
+
+            }
+			.btn:hover{
+				background-color:#887BB0 !important;
+			}
+			.nav-wrapper,.page-footer {
+
+				background: #BCA88E !important;
+			}
+
+			h1,h2,h3,h4,h5 {
+  				color: #000C66;
+				text-align: left;
+				padding: 1em;
+			}
+			.cardLogin{
+				background-color: #004369  ;
+
+			}
+			.separador1{
+				height: 20px;
+				clear: both;
+			
+			
+			
+			}
+			
+			.separador2{
+				width: 2%;
+				height: 1px;
+				float: left;
+				/*clear: both;*/
+			}
+			img:hover{ 
+				transform: scale(0.9);
+				border-radius: 30px;
+			
+			}   
+
+			.modal {
+				max-height: 100% !important;
+				width: 30% !important;
+
+			 }

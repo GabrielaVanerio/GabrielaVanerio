@@ -1,0 +1,98 @@
+<?PHP
+
+
+echo("entrando en require");
+
+	require_once("php/modelos/clientes_modelo.php");
+	
+	$objclientes = new clientes_modelo();
+
+	$error = array();
+	if(isset($_POST['accion']) && $_POST['accion'] == "ingresar"){
+
+		// En caso que la accion sera ingresar procedemos a ingresar el registro
+		$objclientes->constructor();
+		$error = $objclientes->ingresar();
+	}
+
+
+	echo("entre modelo cliente");
+
+	$listaTiposDocu = $objclientes->listaTipoDocumuento();
+	//$listaclientes = $objclientes->listar($arrayFiltro);
+
+?>
+
+<div>
+	<h5>Clientes</h5>
+	
+	<!--<a class="waves-effect waves-light btn modal-trigger right" href="#modal1">Ingresar</a>-->
+
+</div>
+
+
+
+<!-- Modal Structure 
+	<div id="modal1" class="modal modal-fixed-footer">
+		<div class="modal-content">-->
+			<h4>Ingresar Clientes</h4>
+
+		<div class="row">
+  		  <div class="col s12">
+    
+    		<form method="POST" action="" class="col s12">
+				<div class="row">
+					<div class="input-field col s6">
+						<input id="first_name" type="text" class="validate" name="nombre">
+						<label for="first_name">Nombre</label>
+					</div>
+					<div class="input-field col s6">
+						<input id="last_name" type="text" class="validate" name="apellido">
+						<label for="last_name">Apellido</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s4">
+						<input id="documento" type="number" class="validate" name="documento">
+					 	<label for="documento">Documento</label>
+					</div>
+
+					<div class="input-field col s4">
+						<select id="tipoDocumento" name="tipoDocumento" >
+							<option value="" disabled selected>Seleccione una opcion</option>
+<?php
+							foreach($listaTiposDocu as $tipoDocumento){
+?>
+							<option value="<?=$tipoDocumento?>"><?=$tipoDocumento?></option>
+<?php
+							}
+?>
+						</select>
+						<label>Tipo Documento</label>
+					</div>
+					<div class="input-field col s4">
+						<input id="fechaNacimiento" type="date" class="validate" name="fecha_nac">
+						<label for="fechaNacimiento">Fecha Nacimiento</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s6">
+						<input id="clave" type="password" class="validate" name="clave">
+						<label for="clave">Contraseña</label>
+					</div>
+					<div class="input-field col s6">
+						<input id="claveConf" type="password" class="validate" name="claveConf">
+						<label for="claveConf">Confirmar contraseña</label>
+					</div>
+				</div>
+				<input type="hidden" name="accion" value="ingresar">
+				<button class="btn waves-effect waves-light" type="submit">Enviar
+					<i class="material-icons right">send</i>
+				</button>
+			</form>
+		<!--</div>
+		<div class="modal-footer">
+			<a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+		</div>-->
+		</div>
+	</div>
